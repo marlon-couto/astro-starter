@@ -1,0 +1,39 @@
+---
+import "../styles/index.scss";
+
+interface Props {
+  title: string;
+}
+---
+
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!--POPPINS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{Astro.props.title}</title>
+</head>
+
+<body>
+<slot></slot>
+<!--SCRIPTS-->
+<!--BOOTSTRAP 5 JS-->
+<script
+  is:inline
+  src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+></script>
+<!--SCRIPT TO DETECT DARK/LIGHT THEME-->
+<script is:inline src="/lib/bootstrap/darkmodetoggle.min.js"></script>
+<script src="../scripts/main.ts"></script>
+</body>
+
+</html>
